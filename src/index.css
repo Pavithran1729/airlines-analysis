@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Aviation Analytics Theme - Deep Navy & Sky Blue */
+    --background: 0 0% 100%;
+    --foreground: 231 48% 15%;
+    
+    /* Deep Navy Blue - Primary */
+    --primary: 231 63% 28%;
+    --primary-foreground: 210 100% 98%;
+    --primary-glow: 231 63% 40%;
+    
+    /* Sky Blue - Secondary */
+    --secondary: 207 90% 54%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Amber - Accent/Warning */
+    --accent: 36 100% 57%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Delay Severity Colors */
+    --delay-none: 123 43% 50%;
+    --delay-low: 60 100% 59%;
+    --delay-medium: 36 100% 57%;
+    --delay-high: 0 85% 60%;
+    
+    /* UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 231 48% 15%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 231 48% 15%;
+    
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 231 63% 28%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 100% 98%;
+    
+    --radius: 0.75rem;
+    
+    /* Chart Colors */
+    --chart-1: 231 63% 28%;
+    --chart-2: 207 90% 54%;
+    --chart-3: 36 100% 57%;
+    --chart-4: 123 43% 50%;
+    --chart-5: 0 85% 60%;
+    
+    /* Gradients & Effects */
+    --gradient-primary: linear-gradient(135deg, hsl(231 63% 28%), hsl(207 90% 54%));
+    --gradient-hero: linear-gradient(180deg, hsl(231 63% 28%), hsl(231 48% 15%));
+    --shadow-glow: 0 0 40px hsl(207 90% 54% / 0.3);
+    --shadow-card: 0 4px 6px -1px hsl(231 48% 15% / 0.1), 0 2px 4px -1px hsl(231 48% 15% / 0.06);
+  }
+
+  .dark {
+    --background: 231 48% 6%;
+    --foreground: 210 100% 98%;
+    
+    --primary: 207 90% 54%;
+    --primary-foreground: 231 48% 6%;
+    --primary-glow: 207 90% 65%;
+    
+    --secondary: 231 30% 20%;
+    --secondary-foreground: 210 100% 98%;
+    
+    --accent: 36 100% 57%;
+    --accent-foreground: 0 0% 100%;
+    
+    --card: 231 30% 12%;
+    --card-foreground: 210 100% 98%;
+    
+    --muted: 231 30% 20%;
+    --muted-foreground: 215 20% 65%;
+    
+    --popover: 231 30% 12%;
+    --popover-foreground: 210 100% 98%;
+    
+    --border: 231 30% 20%;
+    --input: 231 30% 20%;
+    --ring: 207 90% 54%;
+    
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 210 100% 98%;
+    
+    --shadow-card: 0 4px 6px -1px hsl(0 0% 0% / 0.3), 0 2px 4px -1px hsl(0 0% 0% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+}
