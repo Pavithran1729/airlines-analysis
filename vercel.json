@@ -1,9 +1,14 @@
 {
   "version": 2,
   "builds": [
-    { "src": "dist/index.html", "use": "@vercel/static" },
-    { "src": "dist/assets/**", "use": "@vercel/static" },
-    { "src": "dist/**/*", "use": "@vercel/static" }
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "true",
+        "outputDirectory": "dist"
+      }
+    }
   ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
